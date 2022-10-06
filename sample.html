@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myapp">
+        <div ng-controller="StudentCtrl">
+            <form name="frmStudent" id="frmStudent" class="form-horizontal row-border">
+                <br />
+                <div class="col-md-12">
+
+                <!---   <div class="form-group">
+                        <label class="col-md-4 control-label"> ID</label>
+                        <div class="col-md-7">
+                            <input type="text"
+                                   id="id"
+                                   class="form-control"
+                                   name="id" ng-model="id" />
+                        </div>
+                    </div>-->
+
+                 
+                    
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"> Name</label>
+                        <div class="col-md-7">
+                            <input type="text"
+                                   id="name"
+                                   class="form-control"
+                                   name="name" ng-model="name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"> Phone</label>
+                        <div class="col-md-7">
+                            <input type="text"
+                                   id="phone"
+                                   class="form-control"
+                                   name="phone" ng-model="phone" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            </div>
+                            <div class="col-md-7">
+                                <span id="save" class="btn btn-success margin-right-btn" ng-click="SaveUpdate()">
+                                    <i class="icon-save"></i> {{button}}
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                <div class="clearfix"></div>
+                <hr />
+    
+                <table class="table table-hover general-table">
+                    <thead class="grid-top-panel">
+                        <tr>
+                            <!--"display:none" 
+                            <th style="display:none">id</th>    -->                   
+                            <th> name</th>
+                            <th> phone </th>           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sdata in studnets">
+                           <!--"display:none" 
+                            <td style="display:none">{{sdata.id}}</td>   -->                    
+                            <td> {{sdata.name}}</td>
+                            <td> {{sdata.phone}}</td>
+                            <td style="text-align:right; color:white">
+                                <span>                                
+                                    <span id="save" class="btn btn-primary margin-right-btn" ng-click="getstdbyid(sdata)">
+                                         update
+                                    </span>
+                                </span>
+                                
+                            </td>
+                            <td style="text-align:right; color:white">
+                                <span>
+                                    <span id="save" class="btn btn-danger margin-right-btn" ng-click="deletestudent(sdata)">
+                                        Delete
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+                <br />
+                <br />
+            </form>        
+    
+        </div>
+    </div>
+    
+    <script src="module.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script> 
+</body>
+</html>
